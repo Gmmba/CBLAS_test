@@ -6,5 +6,5 @@ C_DEFINES =
 
 C_INCLUDES = -I/usr/include/x86_64-linux-gnu/openblas-pthread
 
-C_FLAGS = -std=gnu11
+C_FLAGS =  -fopenmp -O3 -std=gnu11
 

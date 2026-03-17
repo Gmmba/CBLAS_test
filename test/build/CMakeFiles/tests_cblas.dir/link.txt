@@ -1,1 +1,0 @@
-/usr/bin/cc CMakeFiles/tests_cblas.dir/tests.c.o -o tests_cblas  -lopenblas 

@@ -1,2 +1,2 @@
-# Empty dependencies file for tests_cblas.
+# Empty dependencies file for benchmark_symm.
 # This may be replaced when dependencies are built.

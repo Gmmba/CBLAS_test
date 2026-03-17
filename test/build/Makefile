@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /mnt/c/CBLAS_test/test
+CMAKE_SOURCE_DIR = /mnt/c/CBLAS_test/CBLAS_test/test
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /mnt/c/CBLAS_test/test/build
+CMAKE_BINARY_DIR = /mnt/c/CBLAS_test/CBLAS_test/test/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/CBLAS_test/test/build/CMakeFiles /mnt/c/CBLAS_test/test/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/CBLAS_test/CBLAS_test/test/build/CMakeFiles /mnt/c/CBLAS_test/CBLAS_test/test/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/CBLAS_test/test/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/c/CBLAS_test/CBLAS_test/test/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -117,41 +117,65 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named tests_cblas
+# Target rules for targets named benchmark_symm
 
 # Build rule for target.
-tests_cblas: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tests_cblas
-.PHONY : tests_cblas
+benchmark_symm: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 benchmark_symm
+.PHONY : benchmark_symm
 
 # fast build rule for target.
-tests_cblas/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests_cblas.dir/build.make CMakeFiles/tests_cblas.dir/build
-.PHONY : tests_cblas/fast
+benchmark_symm/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_symm.dir/build.make CMakeFiles/benchmark_symm.dir/build
+.PHONY : benchmark_symm/fast
 
-tests.o: tests.c.o
-.PHONY : tests.o
+benchmark_symm.o: benchmark_symm.c.o
+.PHONY : benchmark_symm.o
 
 # target to build an object file
-tests.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests_cblas.dir/build.make CMakeFiles/tests_cblas.dir/tests.c.o
-.PHONY : tests.c.o
+benchmark_symm.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_symm.dir/build.make CMakeFiles/benchmark_symm.dir/benchmark_symm.c.o
+.PHONY : benchmark_symm.c.o
 
-tests.i: tests.c.i
-.PHONY : tests.i
+benchmark_symm.i: benchmark_symm.c.i
+.PHONY : benchmark_symm.i
 
 # target to preprocess a source file
-tests.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests_cblas.dir/build.make CMakeFiles/tests_cblas.dir/tests.c.i
-.PHONY : tests.c.i
+benchmark_symm.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_symm.dir/build.make CMakeFiles/benchmark_symm.dir/benchmark_symm.c.i
+.PHONY : benchmark_symm.c.i
 
-tests.s: tests.c.s
-.PHONY : tests.s
+benchmark_symm.s: benchmark_symm.c.s
+.PHONY : benchmark_symm.s
 
 # target to generate assembly for a file
-tests.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tests_cblas.dir/build.make CMakeFiles/tests_cblas.dir/tests.c.s
-.PHONY : tests.c.s
+benchmark_symm.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_symm.dir/build.make CMakeFiles/benchmark_symm.dir/benchmark_symm.c.s
+.PHONY : benchmark_symm.c.s
+
+symm.o: symm.c.o
+.PHONY : symm.o
+
+# target to build an object file
+symm.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_symm.dir/build.make CMakeFiles/benchmark_symm.dir/symm.c.o
+.PHONY : symm.c.o
+
+symm.i: symm.c.i
+.PHONY : symm.i
+
+# target to preprocess a source file
+symm.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_symm.dir/build.make CMakeFiles/benchmark_symm.dir/symm.c.i
+.PHONY : symm.c.i
+
+symm.s: symm.c.s
+.PHONY : symm.s
+
+# target to generate assembly for a file
+symm.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/benchmark_symm.dir/build.make CMakeFiles/benchmark_symm.dir/symm.c.s
+.PHONY : symm.c.s
 
 # Help Target
 help:
@@ -161,10 +185,13 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... tests_cblas"
-	@echo "... tests.o"
-	@echo "... tests.i"
-	@echo "... tests.s"
+	@echo "... benchmark_symm"
+	@echo "... benchmark_symm.o"
+	@echo "... benchmark_symm.i"
+	@echo "... benchmark_symm.s"
+	@echo "... symm.o"
+	@echo "... symm.i"
+	@echo "... symm.s"
 .PHONY : help
 
 

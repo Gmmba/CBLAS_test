@@ -8,7 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/mnt/c/CBLAS_test/test/tests.c" "CMakeFiles/tests_cblas.dir/tests.c.o" "gcc" "CMakeFiles/tests_cblas.dir/tests.c.o.d"
+  "/mnt/c/CBLAS_test/CBLAS_test/test/benchmark_symm.c" "CMakeFiles/benchmark_symm.dir/benchmark_symm.c.o" "gcc" "CMakeFiles/benchmark_symm.dir/benchmark_symm.c.o.d"
+  "/mnt/c/CBLAS_test/CBLAS_test/test/symm.c" "CMakeFiles/benchmark_symm.dir/symm.c.o" "gcc" "CMakeFiles/benchmark_symm.dir/symm.c.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.
