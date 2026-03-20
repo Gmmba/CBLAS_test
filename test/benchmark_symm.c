@@ -143,7 +143,7 @@ double geometric_mean(double *values, int n) {
 }
 
 void run_ssymm_performance_tests() {
-    printf("\nSSYMM Performance Comparison\n\n");
+    printf("\nSSYMM\n\n");
     
     int M = 2000;
     int N = M;
@@ -151,16 +151,15 @@ void run_ssymm_performance_tests() {
     int thread_counts[] = {1, 2, 4, 8, 16};
     int num_thread_tests = 5;
     
-    printf("Problem size: %d x %d\n", M, N);
-    printf("Iterations: %d\n\n", iterations);
+    printf("Размер массива: %d x %d\n", M, N);
+    printf("Количество итераций: %d\n\n", iterations);
     
     for (int t = 0; t < num_thread_tests; t++) {
         int threads = thread_counts[t];
         double perf_ratios[10];
         
-        printf("Threads: %d\n", threads);
-        printf("%-10s %-15s %-15s %-15s %-10s\n", "Run", "My Impl (s)", "OpenBLAS (s)", "Performance %", "Ratio");
-        printf("\n");
+        printf("Потоки: %d\n", threads);
+        printf("%-8s %-15s %-15s %-15s %-10s\n", "Запуск", "Реализация (с)", "OpenBLAS (с)", "Производит. %", "Отношение");
         
         for (int run = 0; run < iterations; run++) {
             double time_my = benchmark_ssymm(M, N, 1, threads, 1);
@@ -169,19 +168,19 @@ void run_ssymm_performance_tests() {
             double perf_ratio = (time_blas / time_my) * 100.0;
             perf_ratios[run] = perf_ratio;
             
-            printf("%-10d %-15.6f %-15.6f %-15.2f %-10.2f\n", 
+            printf("%-8d %-15.6f %-15.6f %-15.2f %-10.2f\n", 
                    run + 1, time_my, time_blas, perf_ratio, time_my / time_blas);
         }
         
         double geo_mean = geometric_mean(perf_ratios, iterations);
         
-        printf("\nGeometric Performance: %.2f%%\n", geo_mean);
-        printf("Speedup vs OpenBLAS: %.2fx\n\n", geo_mean / 100.0);
+        printf("\nСреднее геометрическое производительности: %.2f%%\n", geo_mean);
+        printf("Ускорение относительно OpenBLAS: %.2fx\n\n", geo_mean / 100.0);
     }
 }
 
 void run_dsymm_performance_tests() {
-    printf("\nDSYMM Performance Comparison\n\n");
+    printf("\nDSYMM\n\n");
     
     int M = 2000;
     int N = M;
@@ -189,16 +188,15 @@ void run_dsymm_performance_tests() {
     int thread_counts[] = {1, 2, 4, 8, 16};
     int num_thread_tests = 5;
     
-    printf("Problem size: %d x %d\n", M, N);
-    printf("Iterations: %d\n\n", iterations);
+    printf("Размер массива: %d x %d\n", M, N);
+    printf("Количество итераций: %d\n\n", iterations);
     
     for (int t = 0; t < num_thread_tests; t++) {
         int threads = thread_counts[t];
         double perf_ratios[10];
         
-        printf("Threads: %d\n", threads);
-        printf("%-10s %-15s %-15s %-15s %-10s\n", "Run", "My Impl (s)", "OpenBLAS (s)", "Performance %", "Ratio");
-        printf("\n");
+        printf("Потоки: %d\n", threads);
+        printf("%-8s %-15s %-15s %-15s %-10s\n", "Запуск", "Реализация (с)", "OpenBLAS (с)", "Производит. %", "Отношение");
         
         for (int run = 0; run < iterations; run++) {
             double time_my = benchmark_dsymm(M, N, 1, threads, 1);
@@ -207,22 +205,19 @@ void run_dsymm_performance_tests() {
             double perf_ratio = (time_blas / time_my) * 100.0;
             perf_ratios[run] = perf_ratio;
             
-            printf("%-10d %-15.6f %-15.6f %-15.2f %-10.2f\n", 
+            printf("%-8d %-15.6f %-15.6f %-15.2f %-10.2f\n", 
                    run + 1, time_my, time_blas, perf_ratio, time_my / time_blas);
         }
         
         double geo_mean = geometric_mean(perf_ratios, iterations);
         
-        printf("\nGeometric Performance: %.2f%%\n", geo_mean);
-        printf("Speedup vs OpenBLAS: %.2fx\n\n", geo_mean / 100.0);
+        printf("\nСреднее геометрическое производительности: %.2f%%\n", geo_mean);
+        printf("Ускорение относительно OpenBLAS: %.2fx\n\n", geo_mean / 100.0);
     }
 }
 
 int main() {
-    printf("SYMM Performance Benchmark\n");
     run_ssymm_performance_tests();
     run_dsymm_performance_tests();
-    printf("Benchmark completed!\n");
-    
     return 0;
 }
