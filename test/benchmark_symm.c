@@ -145,7 +145,7 @@ double geometric_mean(double *values, int n) {
 void run_ssymm_performance_tests() {
     printf("\nSSYMM\n\n");
     
-    int M = 2000;
+    int M = 2500;
     int N = M;
     int iterations = 10;
     int thread_counts[] = {1, 2, 4, 8, 16};
@@ -182,7 +182,7 @@ void run_ssymm_performance_tests() {
 void run_dsymm_performance_tests() {
     printf("\nDSYMM\n\n");
     
-    int M = 2000;
+    int M = 2500;
     int N = M;
     int iterations = 10;
     int thread_counts[] = {1, 2, 4, 8, 16};
