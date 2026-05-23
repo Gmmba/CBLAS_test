@@ -259,5 +259,5 @@ int main() {
     printf("Пройдено: %d\n", stats.pass);
     printf("Провалено: %d\n", stats.fail);
     
-    return 0;
+    return 1;
 }
