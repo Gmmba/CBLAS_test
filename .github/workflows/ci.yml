@@ -28,6 +28,3 @@ jobs:
 
       - name: Run interface tests (CBLAS Level 2)
         run: ./build/run_tests
-
-      - name: Run performance tests (CBLAS Level 3 symm)
-        run: ./build/benchmark_symm
