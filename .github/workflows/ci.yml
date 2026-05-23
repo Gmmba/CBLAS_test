@@ -18,12 +18,7 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y \
-            cmake \
-            build-essential \
-            pkg-config \
-            libopenblas-dev \
-            libgomp1
+          sudo apt-get install -y cmake build-essential pkg-config libopenblas-dev
 
       - name: Configure CMake
         run: cmake -B build -S .
@@ -34,5 +29,5 @@ jobs:
       - name: Run interface tests (CBLAS Level 2)
         run: ./build/run_tests
 
-      - name: Run performance tests (CBLAS Level 3: symm)
+      - name: Run performance tests (CBLAS Level 3 symm)
         run: ./build/benchmark_symm
